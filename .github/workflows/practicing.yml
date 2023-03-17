@@ -27,4 +27,4 @@ jobs:
         with:
           version: 18
       - name: build
-        run: npm build
+        run: npm run build
