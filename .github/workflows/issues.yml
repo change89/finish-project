@@ -1,0 +1,11 @@
+name: Output event details on "issues"
+on: push
+jobs:
+  on-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout
+      - name: On issues
+        run: echo "${{ toJSON(issues) }}"
+    
