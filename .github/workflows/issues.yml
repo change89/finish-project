@@ -1,11 +1,12 @@
 name: Output event details on "issues"
-on: push
+on: issue_comment
 jobs:
   on-issues:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout
       - name: On issues
-        run: echo "${{ toJSON(issues) }}"
+        run: echo "${{ github.event.issue.number }}"
     
